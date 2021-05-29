@@ -12,7 +12,7 @@ source <(curl -fsSL https://kutt.it/msf)
 ```bash
 pkg install wget
 
-wget https://raw.githubusercontent.com/gushmazuko/metasploit_in_termux/master/metasploit.sh
+wget https://raw.githubusercontent.com/netslutter/metasploit-framework/master/metasploit.sh
 
 chmod +x metasploit.sh
 
