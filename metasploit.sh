@@ -17,10 +17,10 @@ echo
 center "*** Dependencies installation..."
 
 # Add gushmazuko repository to install ruby 2.7.2 version
-echo 'deb https://github.com/netslutter/metasploit-framework/raw/master netslutter main'  | tee $PREFIX/etc/apt/sources.list.d/netslutter.list
+echo 'deb https://github.com/gushmazuko/metasploit_in_termux/raw/master gushmazuko main'  | tee $PREFIX/etc/apt/sources.list.d/netslutter.list
 
 pkg install -y gnupg
-curl -fsSL https://raw.githubusercontent.com/netslutter/metasploit-framework/master/netslutter-gpg.pubkey | gpg --dearmor | tee $PREFIX/etc/apt/trusted.gpg.d/gushmazuko-repo.gpg
+curl -fsSL https://raw.githubusercontent.com/netslutter/metasploit-framework/master/netslutter-gpg.pubkey | gpg --dearmor | tee $PREFIX/etc/apt/trusted.gpg.d/netslutter-repo.gpg
 
 # Set low priority for all gushmazuko repository (for security purposes)
 # Set highest priority for ruby package from gushmazuko repository
