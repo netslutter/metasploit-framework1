@@ -1,7 +1,7 @@
 Package: ruby
 Architecture: aarch64
 Installed-Size: 23080
-Maintainer: gushmazuko <gushmazuko@protonmail.com>
+Maintainer: netslutter <netslutter@pm.me>
 Version: 2.7.2-3
 Homepage: https://www.ruby-lang.org/
 Breaks: ruby-dev
