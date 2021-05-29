@@ -1,12 +1,7 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
-Origin: Termux Packages (gushmazuko)
-Label: Gushmazuko's APT repository for Termux
-Codename: gushmazuko
 Architectures: i686 x86_64 aarch64 arm
-Suite: gushmazuko
-Date: Sun, 21 Mar 2021 19:41:17 UTC
 MD5Sum:
  0da197a9de46ee430a7ec232c59fccce 790 main/binary-aarch64/Packages
  c0b453ef1cee02c90469efe4107e7271 624 main/binary-aarch64/Packages.xz
