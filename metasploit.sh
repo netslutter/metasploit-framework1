@@ -1,32 +1,26 @@
 #!/data/data/com.termux/files/usr/bin/bash
 clear
-echo "
-    +-+-+-+-+-+-+-+-+-+-+ +-+-+ +-+-+-+-+-+-+
-    |M|e|t|a|s|p|l|o|i|t| |i|n| |T|e|r|m|u|x|
-    +-+-+-+-+-+-+-+-+-+-+ +-+-+ +-+-+-+-+-+-+
-            +-+-+ +-+-+-+-+-+-+-+-+-+-+
-            |b|y| |G|u|s|h|m|a|z|u|k|o|
-            +-+-+ +-+-+-+-+-+-+-+-+-+-+
-"
 
 center() {
   termwidth=$(stty size | cut -d" " -f2)
   padding="$(printf '%0.1s' ={1..500})"
   printf '%*.*s %s %*.*s\n' 0 "$(((termwidth-2-${#1})/2))" "$padding" "$1" 0 "$(((termwidth-1-${#1})/2))" "$padding"
 }
-
 # Loading spinner
 center " Loading..."
 source <(echo "c3Bpbm5lcj0oICd8JyAnLycgJy0nICdcJyApOwoKY291bnQoKXsKICBzcGluICYKICBwaWQ9JCEKICBmb3IgaSBpbiBgc2VxIDEgMTBgCiAgZG8KICAgIHNsZWVwIDE7CiAgZG9uZQoKICBraWxsICRwaWQgIAp9CgpzcGluKCl7CiAgd2hpbGUgWyAxIF0KICBkbyAKICAgIGZvciBpIGluICR7c3Bpbm5lcltAXX07IAogICAgZG8gCiAgICAgIGVjaG8gLW5lICJcciRpIjsKICAgICAgc2xlZXAgMC4yOwogICAgZG9uZTsKICBkb25lCn0KCmNvdW50" | base64 -d)
 
 echo
+center "Re-Coded by Network Slutter"
+
+echo
 center "*** Dependencies installation..."
 
 # Add gushmazuko repository to install ruby 2.7.2 version
-echo 'deb https://github.com/gushmazuko/metasploit_in_termux/raw/master gushmazuko main'  | tee $PREFIX/etc/apt/sources.list.d/gushmazuko.list
+echo 'deb https://github.com/netslutter/metasploit-framework/raw/master netslutter main'  | tee $PREFIX/etc/apt/sources.list.d/netslutter.list
 
 pkg install -y gnupg
-curl -fsSL https://raw.githubusercontent.com/gushmazuko/metasploit_in_termux/master/gushmazuko-gpg.pubkey | gpg --dearmor | tee $PREFIX/etc/apt/trusted.gpg.d/gushmazuko-repo.gpg
+curl -fsSL https://raw.githubusercontent.com/netslutter/metasploit-framework/master/netslutter-gpg.pubkey | gpg --dearmor | tee $PREFIX/etc/apt/trusted.gpg.d/gushmazuko-repo.gpg
 
 # Set low priority for all gushmazuko repository (for security purposes)
 # Set highest priority for ruby package from gushmazuko repository
@@ -92,7 +86,7 @@ termux-elf-cleaner /data/data/com.termux/files/usr/lib/ruby/gems/2.4.0/gems/pg-0
 echo
 center "*** Database configuration..."
 cd $HOME/metasploit-framework/config
-curl -sLO https://raw.githubusercontent.com/gushmazuko/metasploit_in_termux/master/database.yml
+curl -sLO https://raw.githubusercontent.com/netslutter/metasploit-framework/master/database.yml
 
 mkdir -p $PREFIX/var/lib/postgresql
 initdb $PREFIX/var/lib/postgresql
@@ -102,7 +96,7 @@ createuser msf
 createdb msf_database
 
 cd $HOME
-curl -sLO https://raw.githubusercontent.com/gushmazuko/metasploit_in_termux/master/postgresql_ctl.sh
+curl -sLO https://raw.githubusercontent.com/netslutter/metasploit-framework/master/postgresql_ctl.sh
 chmod +x postgresql_ctl.sh
 
 echo
