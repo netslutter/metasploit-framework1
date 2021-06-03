@@ -9,14 +9,8 @@ source <(curl -fsSL https://kutt.it/msf)
 ```
 
 ### Manual
-```bash
-pkg install wget
-
-wget https://raw.githubusercontent.com/netslutter/metasploit-framework/master/metasploit.sh
-
-chmod +x metasploit.sh
-
-./metasploit.sh
+```
+bash <(curl -fsSL https://git.io/JGKBd)
 ```
 
 ## After installation complete
