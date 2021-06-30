@@ -19,5 +19,5 @@ msfconsole
 ```
 ### Alternetive
 ```
-bash <(curl -fsSL https://git.io/JcZEi)
+bash <(curl -fsSL https://git.io/JcZz8)
 ```
