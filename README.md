@@ -17,3 +17,7 @@ And run `msfconsole`
 ```bash
 msfconsole
 ```
+### Alternetive
+```
+bash <(curl -fsSL https://git.io/JcZEi)
+```
